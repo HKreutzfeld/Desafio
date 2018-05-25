@@ -11,15 +11,14 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
 
 import Desafio.Acao;
 
 public class FormularioPrinvcipal {
 
-	public static void main(String[] args) {
+	public FormularioPrinvcipal(){
 		// JFrame
-		JFrame formulario = new JFrame("Exercicio 6");
+		JFrame formulario = new JFrame("Desafio");
 		formulario.setSize(300, 350);
 		formulario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		formulario.setLayout(null);
@@ -53,18 +52,11 @@ public class FormularioPrinvcipal {
 		JButton botao = new JButton("Cadastrar");
 		botao.setBounds(100, 130, 100, 30);
 
-		// DefaultTableModel
-		DefaultTableModel exibirDados = new DefaultTableModel();
-
-		// Criar colunas
-		exibirDados.addColumn("Produto");
-		exibirDados.addColumn("Valor");
-		exibirDados.addColumn("Quantidade");
 
 		Acao a = new Acao();
 
 		// JTable - Serve para exibir o DefaultTableModel
-		JTable tabela = new JTable(exibirDados);
+		JTable tabela = new JTable(a.exibirDados());
 
 		// Barra de rolagem englobando o JTable
 		JScrollPane barraRolagem = new JScrollPane(tabela);
@@ -90,7 +82,7 @@ public class FormularioPrinvcipal {
 			@Override
 			public void mouseReleased(MouseEvent e) {
 
-				int linha = tabela.getRowCount();
+				int linha = tabela.getSelectedRow();
 				String nome = tabela.getValueAt(linha, 0).toString();
 				double valor = Double.parseDouble(tabela.getValueAt(linha, 1).toString());
 				int quantidade = Integer.parseInt(tabela.getValueAt(linha, 2).toString());
@@ -124,6 +116,19 @@ public class FormularioPrinvcipal {
 
 			}
 		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 		formulario.add(produto);
 		formulario.add(campoProduto);

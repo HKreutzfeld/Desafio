@@ -1,9 +1,6 @@
 package Desafio;
 
-import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class Acao {
@@ -44,11 +41,11 @@ public class Acao {
 		Produto.dados.remove(linha);	
 	
 	}
-	public void alterar(String nomeProduto, double valorProduto, int quantidadeProduto, int linha){
+	public void alterar(String nome, double valor, int quantidade, int linha){
 		Produto p = new Produto();
-		p.setNomeProduto(nomeProduto);
-		p.setValorProduto(valorProduto);
-		p.setQuantidadeProduto(quantidadeProduto);
+		p.setNomeProduto(nome);
+		p.setValorProduto(valor);
+		p.setQuantidadeProduto(quantidade);
 		
 		
 		
